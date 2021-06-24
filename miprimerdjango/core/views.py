@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Vehiculo
+from .forms import VehiculoForm
 
 # Create your views here.
 
@@ -12,4 +13,6 @@ def home(request):
   return render(request,'core/home.html', datos)
 
 def form_vehiculo(request):
-    return render (request, 'core/form_vehiculo.html' )
+    formulario = VehiculoForm()
+    datos={'formulario' : formulario}
+    return render (request, 'core/form_vehiculo.html', datos )

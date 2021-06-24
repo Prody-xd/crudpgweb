@@ -14,7 +14,7 @@
         <form method="post" action="" id="formulario-add">
             {% csrf_token %}
             <div class="form-group"> 
-                {{ form.as_table }}
+                {{ formulario.as_table }}
             </div>
 
             <input type="submit" class="btn btn-success" id="enviar" value="Enviar">
