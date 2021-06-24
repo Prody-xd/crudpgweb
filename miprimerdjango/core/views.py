@@ -14,5 +14,5 @@ def home(request):
 
 def form_vehiculo(request):
     formulario = VehiculoForm()
-    datos={'formulario' : formulario}
+    datos={'formulario': formulario}
     return render (request, 'core/form_vehiculo.html', datos )
