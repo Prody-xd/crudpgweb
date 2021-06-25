@@ -9,7 +9,7 @@ def home(request):
   #Vehiculos viene desde la BD
   #crear un obj que me trae todas las entradas de la BD
   Vehiculos = Vehiculo.objects.all()
-  datos = { 'vehiculos' : Vehiculos }   
+  datos = { 'Vehiculos' : Vehiculos }   
   return render(request,'core/home.html', datos)
 
 def form_vehiculo(request):
