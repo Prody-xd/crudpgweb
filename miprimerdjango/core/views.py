@@ -1,5 +1,5 @@
 from django.http import request
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
 from .models import Vehiculo
 from .forms import VehiculoForm
 
@@ -13,24 +13,36 @@ def home(request):
   datos = { 'Vehiculos' : Vehiculos }   
   return render(request,'core/home.html', datos)
 
-def form_vehiculo(request):
+def add_vehiculo(request):
   #request normal
     datos={
         'form': VehiculoForm(),
         }
 
     if request.method == 'POST':
-      formulario = VehiculoForm(request.POST)
-      if formulario.is_valid():
-        formulario.save()
+      formulario_add = VehiculoForm(request.POST)
+      if formulario_add.is_valid:
+        formulario_add.save()
         datos['mensaje'] = "Datos guardados correctamente"
 
-  
-    return render (request, 'core/form_vehiculo.html', datos )
+    return render (request, 'core/add_vehiculo.html', datos )
 
-def form_mod_vehiculo(request, pk):
-  vehiculo = get_object_or_404(Vehiculo, patente=pk)
+def edit_vehiculo(request, pk):
+  vehiculo = Vehiculo.objects.get(patente=pk)
   datos = {
       'form': VehiculoForm(instance=vehiculo)
-  }
-  return render(request, 'core/form_mod_vehiculo.html', datos)
+      }
+  if request.method == 'POST':
+      formulario_edit = VehiculoForm(data=request.POST, instance=Vehiculo)
+      if formulario_edit.is_valid:
+        formulario_edit.save()
+        datos['mensaje'] = "Vehiculo Editado Correctamente"
+  return render(request, 'core/edit_vehiculo.html', datos)
+
+def delete_vehiculo(request, pk):
+  vehiculos = Vehiculo.objects.get(patente = pk)
+  vehiculos.delete()
+  return redirect(to="home")
+
+def formulario(request):
+  return render(request, 'core/formulario.html')

@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import home, form_vehiculo, form_mod_vehiculo
+from .views import home, add_vehiculo, edit_vehiculo, delete_vehiculo, formulario
 
 urlpatterns = [
     path('', home, name="home" ),
-    path('form-vehiculo/', form_vehiculo, name='form_vehiculo'),
-    path('form-mod-vehiculo/<pk>', form_vehiculo, name='form_mod_vehiculo'),
+    path('agregar-vehiculo/', add_vehiculo, name='add-vehiculo'),
+    path('editar-vehiculo/<pk>/', edit_vehiculo, name='edit-vehiculo'),
+    path('delete-vehiculo/<pk>/', delete_vehiculo,name='delete-vehiculo'),
+    path('formulario/', formulario, name='formulario'),
 ]
