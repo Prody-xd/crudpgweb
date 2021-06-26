@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.http import request
+from django.shortcuts import render, get_object_or_404
 from .models import Vehiculo
 from .forms import VehiculoForm
 
@@ -13,6 +14,23 @@ def home(request):
   return render(request,'core/home.html', datos)
 
 def form_vehiculo(request):
-    formulario = VehiculoForm()
-    datos={'formulario': formulario}
+  #request normal
+    datos={
+        'form': VehiculoForm(),
+        }
+
+    if request.method == 'POST':
+      formulario = VehiculoForm(request.POST)
+      if formulario.is_valid():
+        formulario.save()
+        datos['mensaje'] = "Datos guardados correctamente"
+
+  
     return render (request, 'core/form_vehiculo.html', datos )
+
+def form_mod_vehiculo(request, pk):
+  vehiculo = get_object_or_404(Vehiculo, patente=pk)
+  datos = {
+      'form': VehiculoForm(instance=vehiculo)
+  }
+  return render(request, 'core/form_mod_vehiculo.html', datos)
