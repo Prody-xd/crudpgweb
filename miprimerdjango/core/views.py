@@ -1,5 +1,6 @@
-from django.http import request
+from django.http import request, response
 from django.shortcuts import render, redirect
+from rest_framework import serializers
 from .models import Vehiculo
 from .forms import VehiculoForm
 
@@ -46,3 +47,6 @@ def delete_vehiculo(request, pk):
 
 def formulario(request):
   return render(request, 'core/formulario.html')
+
+
+

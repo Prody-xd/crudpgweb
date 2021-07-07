@@ -19,3 +19,12 @@ class Vehiculo(models.Model):
 
     def __str__(self):
         return self.patente
+
+class mecanicos (models.Model):
+    nombre = models.CharField(max_length=250, verbose_name='Nombre')
+    telefono = models.CharField(max_length=250, verbose_name='Telefono')
+    email = models.CharField(max_length=250, verbose_name='Telefono')
+    especialidad = models.CharField(max_length=250, verbose_name='Especialidad')
+    tiempo_exp = models.CharField(max_length=250, verbose_name='TiempoExp')
+    def __str__(self):
+        return self.nombre
