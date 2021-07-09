@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Mecanicos</title>
+</head>
+<body>
+    <div class="container">
+        <table class="table table-striped table-dark">
+          <br>
+            <tr>
+              <th>Nombre</th>
+              <th>Telefono</th>
+              <th>Email</th>
+              <th>Especialidad</th>
+              <th>tiempo de Experiencia</th>
+
+            </tr>
+            {% for meca in mecanicos %}
+            <td>{{ meca.nombre }}</td>
+            <td>{{ meca.telefono }}</td>
+            <td>{{ meca.email }}</td>
+            <td>{{ meca.especialidad }}</td>
+            <td>{{ meca.tiempo_exp }}</td>
+            {% endfor %}
+        </table>
+
+        
+    </div>
+</body>
+</html>
