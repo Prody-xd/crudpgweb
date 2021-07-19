@@ -1,0 +1,394 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>REGISTRAR</title>
+     <link type="text/css" rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="crossorigin="anonymous" />
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        div.col-sm {
+            background-color: blueviolet;
+            border: 1px solid #000;
+        }
+
+        div.col {
+            background-color: rgb(100, 237, 123);
+            border: 1px solid #000;
+        }
+        #b-lila div {
+            background-color: blueviolet;
+            border: 1px solid #000;
+        }
+        #b-rojo div {
+            background-color: rgb(241, 61, 15);
+            border: 1px solid #000;
+        }
+
+        #b-amarillo div {
+            background-color: rgb(237, 241, 15);
+            border: 1px solid #000;
+        }
+    </style>
+     <!-- FAVICON -->
+<link rel="shortcut icon" type="image/x-icon" href="/Content/images/favicon.ico">
+
+<!-- CSS -->
+<link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/Content/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="/Content/main.css?v=1" rel="stylesheet" type="text/css" />
+
+<!-- SCRIPT -->
+<script type="text/javascript" src='/Scripts/jquery-3.3.1.min.js'></script>
+<script type="text/javascript" src='/Scripts/jquery-ui.min.js'></script>
+<script type="text/javascript" src='/Scripts/jquery.Rut.min.js'></script>
+<script type="text/javascript" src='/Scripts/RutUtilities.js'></script>
+<script type="text/javascript" src='/Scripts/bootstrap.js'></script>
+<script type="text/javascript" src='/Scripts/Varios.js'></script>
+<script type="text/javascript" src='/Scripts/Alertas.js'></script>
+<script type="text/javascript" src='/Scripts/jquery.ui.datepicker-es.js'></script>
+<script type="text/javascript" src='/Scripts/main.js'></script>
+
+<!-- Upload de Archivo -->
+<script type="text/javascript" src='/Scripts/fileupload/vendor/jquery.ui.widget.js'></script>
+<script type="text/javascript" src='/Scripts/fileupload/jquery.iframe-transport.js'></script>
+<script type="text/javascript" src='/Scripts/fileupload/jquery.fileupload.js'></script>
+
+<script type="text/javascript" src='/Scripts/Pages/Default.js?v=4'></script>
+
+ <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+
+<style>
+    body {background:linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+background:-webkit-linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+background:-moz-linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+background:-o-linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+background:-ms-linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+        }
+</style>
+</head>
+
+<body >
+     <!-- Barra de navegación-->
+     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: indianred;">
+        <a class="navbar-item" href="/">
+            <img src="{% static 'core/img/logopag.png' %}" width="50" height="50" align="left">     
+        </a>
+        <a class="navbar-brand" href="http://127.0.0.1:8000/Home">TALLER RAYO MAKWEEN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://127.0.0.1:8000/accounts/login/">INICIAR SESIÓN <span class="sr-only">(current)</span></a>
+            </li>
+    
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="Mas-Servicios" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                MAS SERVICIOS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">EMPLEADOS</a>
+                <a class="dropdown-item" href="#">TRABAJA CON NOSOTROS</a>
+                <a class="dropdown-item" href="http://127.0.0.1:8000/Formulario">INSCRIPCIÓN VEHICULOS</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Terminos y Condiciones</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </div>
+      </nav>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <form method="post" action="./" id="ctl01">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="HjDsmE32pGQ45lNwy+20LAkOY7yCWMTjXGdUygol9a5vJlnp1GeoR3qMPE6jnjukCfR02n1Z3x0j25aEVdD2UOvK70iSUw5bC109wjqvsJ8=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div></form>
+    <div class="container">
+    
+    </script>    
+
+    <div class="row">
+        <div class="col-lg-12">
+            <img src="/Content/images/barra-logo.png" alt="" class="barra--logo"/><br />
+            <img src="/Content/images/logo.svg" alt="" />
+        </div>
+        <div class="col-lg-12 title-form text-center mb-4">
+            FORMULARIO INGRESO VEHICULOS
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12" id="msgError" style="display: none;">
+            <div class="alert alert-danger" role="alert">
+                Hay errores en el formulario, por favor, corríjalos antes de continuar.
+            </div>
+        </div>
+    </div>
+    <form id="datosForm">
+        <div class="row">
+            <!-- datos personales -->
+            <div class="col-lg-12">
+                <div class="card mb-4">
+                    <div class="card-header bg--red title-card">
+                        Datos dueño/a del vehiculo
+                    </div>
+                    <div class="card-body">
+                        <!-- rut, nombre, apellido -->
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="rut">RUT</label>
+                                    <input class="form-control rut" type="text" id="rut" name="rut" valida="true" maxlength="100" />
+                                    <div id="e_rut" class="invalid-feedback">
+                                        Debe indicar un rut válido
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="nombres">Nombre</label>
+                                    <input class="form-control" type="text" id="nombre" name="nombre" valida="true" maxlength="100" />
+                                    <div id="e_nombre" class="invalid-feedback">
+                                        Debe indicar el nombre
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">  
+                                <div class="form-group">
+                                    <label for="nombres">Apellido</label>
+                                    <input class="form-control" type="text" id="apellido" name="apellido" valida="true" maxlength="100" />
+                                    <div id="e_apellido" class="invalid-feedback">
+                                        Debe indicar el apellido
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- email -->
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="emailContacto">Email de contacto</label>
+                                    <input class="form-control" type="text" id="emailContacto" name="emailContacto" valida="true" maxlength="100" />
+                                    <div id="e_emailContacto" class="invalid-feedback">
+                                        Debe indicar un email válido
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="confirmaEmailContacto">Confirme email de contacto</label>
+                                    <input class="form-control" type="text" id="confirmaEmailContacto" valida="true" maxlength="100" />
+                                    <div id="e_confirmaEmailContacto" class="invalid-feedback">
+                                        Debe confirmar el email
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="telefonoPyme">Celular (Ingrese 9 dígitos) </label>
+                                    <input class="form-control num" type="text" id="telefonoPyme" name="telefonoPyme" valida="true" maxlength="11" value="56" />
+                                    <div id="e_telefonoPyme" class="invalid-feedback">
+                                        Debe indicar el télefono válido
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- region, comuna -->
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="regionPyme">Región</label>
+                                    <select class="form-control" id="regionPyme" name="regionPyme" valida="true">
+                                        <option value="0">Seleccionar</option>
+                                        <option value="1">I Región de Tarapacá</option>
+                                        <option value="2">II Región de Antofagasta</option>
+                                        <option value="3">III Región de Atacama</option>
+                                        <option value="4">IV Región de Coquimbo</option>
+                                        <option value="5">V Región de Valparaíso</option>
+                                        <option value="6">VI Región del Libertador Gral. Bernardo O'Higgins</option>
+                                        <option value="7">VII Región del Maule</option>
+                                        <option value="8">VIII Región del Bío-bío</option>
+                                        <option value="9">IX Región de La Araucanía</option>
+                                        <option value="10">X Región de Los Lagos</option>
+                                        <option value="11">XI Región de Aysen</option>
+                                        <option value="12">XII Región de Magallanes y Antártica Chilena</option>
+                                        <option value="13">Región Metropolitana de Santiago</option>
+                                        <option value="14">XIV Región de Los Ríos</option>
+                                        <option value="15">XV Región de Arica y Parinacota</option>
+                                        <option value="16">XVI Región de Ñuble</option>
+                                    </select>
+                                    <div id="e_regionPyme" class="invalid-feedback">
+                                        Debe seleccionar la región
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="comunaPyme">Comuna</label>
+                                    <select class="form-control" id="comunaPyme" name="comunaPyme" valida="true">
+                                        <option value="0">Seleccionar</option>
+                                    </select>
+                                    <div id="e_comunaPyme" class="invalid-feedback">
+                                        Debe seleccionar la comuna
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- direccion -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="direccionPyme">Calle</label>
+                                    <input class="form-control" type="text" id="direccionPyme" name="direccionPyme" valida="true" maxlength="200" />
+                                    <div id="e_direccionPyme" class="invalid-feedback">
+                                        Debe indicar la dirección de la pyme
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                <label for="direccionNumero">N°</label>
+                                    <input class="form-control" type="text" id="direccionNumero" name="direccionNumero" valida="true" maxlength="6" />
+                                    <div id="e_direccioNumero" class="invalid-feedback">
+                                        Requerido
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="direccionLocal">Local</label>
+                                    <input class="form-control" type="text" id="direccionLocal" name="direccionLocal" maxlength="6" />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label for="direccionGaleria">Galería</label>
+                                    <input class="form-control" type="text" id="direccionGaleria" name="direccionGaleria" maxlength="50" />
+                                </div>
+                            </div>
+                        </div>
+                                           
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- datos pyme -->
+        <div class="row">            
+            <div class="col-lg-12">
+                <br />
+                <div class="card" id="divDatosPyme">
+                    <div class="card-header bg--red title-card">
+                        Datos del Vehiculo
+                    </div>
+                    <div class="card-body">
+                        <!-- rut, nombre pyme -->
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label for="rutPyme">Patente</label>
+                                    <input class="form-control rut" type="text" id="rutPyme" name="rutPyme" valida="true" maxlength="100" />
+                                    <div id="e_rutPyme" class="invalid-feedback">
+                                        Debe indicar una patente valida.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                    <label for="rutPyme">Marca vehiculo</label>
+                                    <input class="form-control" type="text" id="nombrePyme" name="nombrePyme" valida="true" maxlength="100" />
+                                    <div id="e_nombrePyme" class="invalid-feedback">
+                                        Debe indicar la marca del vehiculo
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="regionPyme">Año</label>
+                            <select class="form-control" id="regionPyme" name="regionPyme" valida="true">
+                                <option value="0">Seleccionar</option>
+                                <option value="1">2000</option>
+                                <option value="2">2001</option>
+                                <option value="3">2002</option>
+                                <option value="4">2003</option>
+                                <option value="5">2004</option>
+                                <option value="6">2005</option>
+                                <option value="7">2006</option>
+                                <option value="8">2007</option>
+                                <option value="9">2008</option>
+                                <option value="10">2009</option>
+                                <option value="11">2010</option>
+                                <option value="12">2011</option>
+                                <option value="13">2012</option>
+                                <option value="14">2013</option>
+                                <option value="15">2014</option>
+                                <option value="16">Otro</option>
+                            </select>
+                            <div id="e_regionPyme" class="invalid-feedback">
+                                Debe seleccionar el año
+                            </div>
+                        </div>
+                   
+  
+</body>
+
+</html>
+ 
